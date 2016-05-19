@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="celestial.FXMLLocalController">
+    <children>
+        <Button fx:id="button" layoutX="614.0" layoutY="14.0" onAction="#handleButtonAction" prefHeight="145.0" prefWidth="340.0" text="Read from file and update database" />
+        <Label fx:id="labelDate" layoutX="625.0" layoutY="169.0" minHeight="16" minWidth="69" prefHeight="34.0" prefWidth="319.0" />
+      <Button fx:id="button2" layoutX="136.0" layoutY="533.0" mnemonicParsing="false" onAction="#handleButtonAction2" prefHeight="55.0" prefWidth="164.0" text="Load data from database" />
+      <TableView fx:id="dbTable" layoutY="300.0" prefHeight="230.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="dbNoradIDCol" prefWidth="85.0" text="NoradID" />
+          <TableColumn fx:id="dbNameCol" prefWidth="125.0" text="Name" />
+            <TableColumn fx:id="dbObjTypeCol" prefWidth="125.0" text="Type" />
+            <TableColumn fx:id="dbOrbTypeCol" prefWidth="125.0" text="Orbit type" />
+            <TableColumn fx:id="dbCountryCol" prefWidth="125.0" text="Country" />
+        </columns>
+      </TableView>
+      <Canvas fx:id="canvas" height="300.0" width="600.0" />
+      <Slider fx:id="sliderDate" blockIncrement="1.0" layoutX="614.0" layoutY="214.0" majorTickUnit="1.0" max="3.0" min="-3.0" onMouseDragReleased="#handleSliderAction" onMouseReleased="#handleSliderAction" prefHeight="38.0" prefWidth="340.0" showTickLabels="true" showTickMarks="true" />
+      <Button fx:id="button3" layoutX="315.0" layoutY="533.0" mnemonicParsing="false" onAction="#handleButtonAction3" prefHeight="25.0" prefWidth="285.0" text="Add object for rendering" />
+      <TableView fx:id="otrTable" layoutX="614.0" layoutY="300.0" prefHeight="219.0" prefWidth="340.0">
+        <columns>
+          <TableColumn fx:id="otrNoradIDCol" prefWidth="85.0" text="NoradID" />
+          <TableColumn fx:id="otrEpochYearCol" prefWidth="120.0" text="Epoch year" />
+            <TableColumn fx:id="otrEpochDayCol" prefWidth="120.0" text="Epoch day" />
+        </columns>
+      </TableView>
+      <Button layoutX="614.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleButtonAction4" prefHeight="34.0" prefWidth="340.0" text="Render" />
+      <TextField fx:id="noradIDText" layoutX="14.0" layoutY="533.0" prefHeight="25.0" prefWidth="114.0" promptText="NoradID filter" />
+      <TextField fx:id="nameText" layoutX="14.0" layoutY="563.0" prefHeight="25.0" prefWidth="114.0" promptText="Namefilter" />
+      <Label layoutX="678.0" layoutY="530.0" prefHeight="17.0" prefWidth="91.0" fx:id="xLabel" />
+      <Label fx:id="yLabel" layoutX="678.0" layoutY="547.0" prefHeight="17.0" prefWidth="91.0" />
+      <Label fx:id="zLabel" layoutX="678.0" layoutY="564.0" prefHeight="17.0" prefWidth="91.0" />
+      <Label fx:id="vLabel" layoutX="840.0" layoutY="530.0" prefHeight="17.0" prefWidth="91.0" />
+      <Label fx:id="altLabel" layoutX="840.0" layoutY="547.0" prefHeight="17.0" prefWidth="91.0" />
+      <Label layoutX="645.0" layoutY="530.0" prefHeight="17.0" prefWidth="33.0" text="x:" />
+      <Label layoutX="645.0" layoutY="547.0" prefHeight="17.0" prefWidth="33.0" text="y:" />
+      <Label layoutX="645.0" layoutY="564.0" prefHeight="17.0" prefWidth="33.0" text="z:" />
+      <Label layoutX="807.0" layoutY="530.0" prefHeight="17.0" prefWidth="33.0" text="|v|:" />
+      <Label layoutX="807.0" layoutY="547.0" prefHeight="17.0" prefWidth="33.0" text="alt:" />
+      <Button fx:id="delButton" layoutX="315.0" layoutY="563.0" mnemonicParsing="false" onAction="#handleButtonAction5" prefHeight="25.0" prefWidth="285.0" text="Remove object from rendering" />
+    </children>
+</AnchorPane>
