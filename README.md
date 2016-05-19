@@ -1,2 +1,3 @@
-Celestial v1.0
+## Celestial v1.0
+
 Инструкция по запуску находится в папке "LAUNCH"
