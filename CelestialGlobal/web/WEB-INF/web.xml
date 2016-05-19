@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>loadOneSSR</servlet-name>
+        <servlet-class>servlet.LoadOneSSR</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>getOneTLE</servlet-name>
+        <servlet-class>servlet.GetAll</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>getMostSuitableTLE</servlet-name>
+        <servlet-class>servlet.GetMostSuitableTLE</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loadOneSSR</servlet-name>
+        <url-pattern>/loadOneSSR</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getOneTLE</servlet-name>
+        <url-pattern>/getOneTLE</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getMostSuitableTLE</servlet-name>
+        <url-pattern>/getMostSuitableTLE</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <listener>
+        <listener-class>
+            listener.ApplicationListener
+        </listener-class>
+    </listener>
+</web-app>
